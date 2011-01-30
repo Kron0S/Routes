@@ -37,7 +37,7 @@
 
 		<h2>Требования</h2>
 		<p><a href="http://www.php.net/">php 5.2+</a></p>
-		<p>Apache с модулем mod_rewrite</p>
+		<p><a href="http://httpd.apache.org/">Apache</a> с модулем <a href="http://httpd.apache.org/docs/2.0/mod/mod_rewrite.html">mod_rewrite</a></p>
 
 		<h2>Установка</h2>
 		<ol>
@@ -53,19 +53,34 @@
 		<h2>Как использовать?</h2>
 		<p></p>
 
-		<h2>Описание правил</h2>
+		<h3>.htaccess</h3>
+		<p></p>
+		<pre class="prettyprint">
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php/$1 [L,QSA]</pre>
+
+		<h3>Описание правил</h3>
 		<p></p>
 		<pre class="prettyprint">
 		</pre>
 
-		<h2>Диспетчеризация</h2>
+		<h3>Диспетчеризация</h3>
 		<p></p>
 
-		<h2>Генерация URL`ов</h2>
+		<h3>Генерация URL`ов</h3>
 		<p></p>
 
-		<h2>Все вместе</h2>
+		<h3>Все вместе</h3>
 		<p></p>
+
+		<h2>В планах</h2>
+		<ul>
+			<li>модуль для Zend Framework, Yii, CodeIgniter, Kohana, CakePHP, Symfony</li>
+			<li>поддержка событий, события обрабротки правила и генерации URL`а</li>
+		</ul>
 
 		<h2>Другие PHP классы для маршрутизации</h2>
 		<ul>
@@ -102,10 +117,13 @@
 		<h2>Скачать</h2>
 		<p>Этот проект можно скачать как <a href="http://github.com/Kron0S/Routes/zipball/master">zip</a> или <a href="http://github.com/Kron0S/Routes/tarball/master">tar</a>.</p>
 		<p>Или получить код с помощью <a href="http://git-scm.com/">Git</a> использовав следующую команду:</p>
-		<pre class="prettyprint"><span class="pln">$ git clone git</span><span class="pun">:</span><span class="com">//github.com/Kron0S/Routes</span></pre>
+		<pre class="prettyprint">$ git clone git://github.com/Kron0S/Routes</pre>
+
 		<div class="footer">
 			Проект на GitHub : <a href="http://github.com/Kron0S/Routes">Kron0S/Routes</a>
 		</div>
+		
+		<a href="http://kron0s.com" class="logo" alt="Пушников Алексей - разработка на PHP" title="Пушников Алексей - разработка на PHP"><img alt="Пушников Алексей - разработка на PHP" src="img/kron0s.png"></a>
 	</div>
 </body>
 </html>
